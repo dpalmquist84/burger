@@ -42,34 +42,34 @@ app.get("/", function(req, res) {
     });
   });
   
-  // Show the user the individual quote and the form to update the quote.
+ 
   app.get("/:id", function(req, res) {
-    connection.query("SELECT * FROM quotes where id = ?", [req.params.id], function(err, data) {
+    connection.query("SELECT * FROM burgers where id = ?", [req.params.id], function(err, data) {
       if (err) {
         return res.status(500).end();
       }
   
       console.log(data);
-      res.render("single-quote", data[0]);
+      res.render("index", data[0]);
     });
   });
   
-  app.post("/api/quotes", function(req, res) {
-    connection.query("INSERT INTO quotes (author, quote) VALUES (?, ?)", [
-      req.body.author, req.body.quote
+  app.post("/api/burgers", function(req, res) {
+    connection.query("INSERT INTO burgers (burger, description) VALUES (?, ?)", [
+      req.body.burger, req.body.description
     ], function(err, result) {
       if (err) {
         // If an error occurred, send a generic server faliure
         return res.status(500).end();
       }
   
-      // Send back the ID of the new quote
+      
       res.json({ id: result.insertId });
     });
   });
   
-  app.delete("/api/quotes/:id", function(req, res) {
-    connection.query("DELETE FROM quotes WHERE id = ?", [req.params.id], function(err, result) {
+  app.delete("/api/burgers/:id", function(req, res) {
+    connection.query("DELETE FROM burgers WHERE id = ?", [req.params.id], function(err, result) {
       if (err) {
         // If an error occurred, send a generic server faliure
         return res.status(500).end();
@@ -83,10 +83,10 @@ app.get("/", function(req, res) {
   });
   
   
-  // Update a quote by an id and then redirect to the root route.
-  app.put("/api/quotes/:id", function(req, res) {
-    connection.query("UPDATE quotes SET author = ?, quote = ? WHERE id = ?", [
-      req.body.author, req.body.quote, req.params.id
+ 
+  app.put("/api/burgers/:id", function(req, res) {
+    connection.query("UPDATE burgers SET burger = ?, description = ? WHERE id = ?", [
+      req.body.burger, req.body.description, req.params.id
     ], function(err, result) {
       if (err) {
         // If an error occurred, send a generic server faliure

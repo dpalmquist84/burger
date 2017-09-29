@@ -1,35 +1,61 @@
+
+<div class="container"></div>
+ 
+<div class="title">
 <h1>Wendys Hamburger App</h1>
 
 <p>Watch what you eat</p>
+</div>
+
 
 <!-- Pass in data from server.js -->
+
 <ul>
-  {{#each quotes}}
+  {{#each burger}}
   	<li>
   		<p><span class="label">ID:</span> {{this.id}}</p>
-      <p><span class="label">Quote:</span> {{this.quote}}</p>
-      <p><span class="label">Author:</span> {{this.author}}</p>
+      <p><span class="label">description:</span> {{this.description
+}}</p>
+      <p><span class="label">burger:</span> {{this.burger}}</p>
 
-      <button data-id="{{this.id}}" class="delquote">Delete</button>
+      <button data-id="{{this.id}}" class="delburger">Delete</button>
 
-      <a href="/{{this.id}}">Update this quote</a>
+      <a href="/{{this.id}}">Update this burger</a>
   	</li>
   {{/each}}
 </ul>
 
-<h2>Add a Quote</h2>
+<h2>Add a Burger</h2>
 
 <form class="create-form">
 
   <div class="form-group">
-    <label for="auth">Author:</label>
-    <input type="text" id="auth" name="author">
+    <label for="burger">Burger</label>
+    <input type="text" id="burger" name="burger">
   </div>
 
   <div class="form-group">
-    <label for="quo">Quote:</label>
-    <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="1" cols="40"></textarea>
   </div>
 
-  <button type="submit">Add Quote</button>
+  <button type="submit">Add Burger</button>
 </form>
+</div>
+
+
+{{!-- <div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary">Save changes</a>
+  </div>
+</div> --}}
+
+
