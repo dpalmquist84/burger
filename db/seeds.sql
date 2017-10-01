@@ -1,5 +1,7 @@
+USE burgers_db;
+
 INSERT INTO burgers
- (burger, is_devoured, description, timestamp)
+ (burger, is_devoured, taste, timestamp)
  VALUES 
 ("Dave's Single", false, "tasty", CURTIME()),
 ("Dave's Double", false, "tasty", CURTIME()),
@@ -11,3 +13,7 @@ INSERT INTO burgers
 ("Jr Cheeseburger", false, "tasty", CURTIME()),
 ("Double Stack", false, "tasty", CURTIME()),
 ("JR Hamburger", false, "tasty", CURTIME());
+
+
+
+select * from burgers;
