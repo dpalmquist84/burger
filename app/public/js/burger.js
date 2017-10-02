@@ -20,9 +20,11 @@ $("#burger-submit").on("click", function(event) {
   
         var row = $("<div>");
         row.addClass("burger");
+        
   
         row.append("<p>" + newburger.burger + " </p>");
         row.append("<p>" + newburger.taste + "</p>");
+        row.append(`<p> Has this burger been eaten? ${newburger.is_devoured} </p>`)
         row.append("<p>At " + moment(newburger.created_at).format("h:mma on dddd") + "</p>");
         row.append(`<button id="devour" class="btn">Devour 🍔 </button>`)
   
@@ -36,7 +38,7 @@ $("#burger-submit").on("click", function(event) {
   });
 
 $("#devour").on("click", function(){
-    console.log(`devour clicked`)
+    console.log("devoured")
 
 })
   
