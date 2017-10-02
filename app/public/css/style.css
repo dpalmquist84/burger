@@ -1,0 +1,11 @@
+body {
+    color: #ffffff;
+    font-weight: bold;
+    background-image: url("https://thearmitageeffect.files.wordpress.com/2012/09/wendys-gift-card-wendys-old-fashioned-hamburgers-fast-food-restaurants.jpg")
+}
+
+.burger{
+    background: rgb(127, 1, 0);
+    padding: .5em;
+    margin: 2px;
+}
