@@ -6,48 +6,42 @@
 
 <h3>Watch what you eat</h3>
 
-<div class="row">
-  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+<!DOCTYPE html>
+<html lang="en-us">
 
-<form class="create-form">
-  <h2>Add a Burger</h2>
+  <body>
 
-  <div class="form-group">
-    <label for="burger">Burger</label>
-    <input type="text" id="burger" name="burger">
-  </div>
+    <div class="jumbotron">
+      <h1 class="text-center">Burgers!</h1>
+    </div>
 
-  <div class="form-group">
-    <label for="description">Description</label>
-    <textarea id="description" name="description" rows="1" cols="40"></textarea>
-  </div>
+    <div class="container">
 
-  <button type="submit">Add Burger</button>
-</form>
-  </div>
-</div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <p class="cool-font">Name</p>
+          <input class="form-control" type="text" id="author" placeholder="Enter Your Name">
+          <br>
+          <p class="cool-font">Burger</p>
+          <textarea class="form-control" rows="3" id="burgers-box" placeholder="Enter burgers Here!"></textarea>
+          <button id="burgers-submit" class="btn btn-lg pull-right">Submit!</button>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <h2>burgers</h2>
+          <hr>
+          <div id="burgers-area"></div>
+        </div>
+      </div>
 
+    </div>
 
-<!-- Pass in data from server.js -->
-<div class="row">
-  <div class="col-lg-6 col-md-6 col-xs-10 col-sm-12">
-<ul>
-  {{#each burgers}}
-  	<li>
-  		<p><span class="label">ID:</span> {{this.id}}</p>
-      <p><span class="label">description:</span> {{this.taste}}</p>
-      <p><span class="label">burger:</span> {{this.burger}}</p>
+  <script type="text/javascript" src="js/burgers.js"></script>
+  </body>
+</html>
 
-
-      <button data-id="{{this.id}}" class="delburger">Devour it!</button>
-
-      <a href="/{{this.id}}">Update this burger</a>
-  	</li>
-  {{/each}}
-</ul>
-  </div>
-</div>
 
 
 {{!-- <div class="modal hide fade" id="myModal">
