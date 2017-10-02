@@ -6,10 +6,32 @@
 
 <h3>Watch what you eat</h3>
 
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+<form class="create-form">
+  <h2>Add a Burger</h2>
+
+  <div class="form-group">
+    <label for="burger">Burger</label>
+    <input type="text" id="burger" name="burger">
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="1" cols="40"></textarea>
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>
+  </div>
+</div>
+
 
 
 <!-- Pass in data from server.js -->
-
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-xs-10 col-sm-12">
 <ul>
   {{#each burgers}}
   	<li>
@@ -24,23 +46,7 @@
   	</li>
   {{/each}}
 </ul>
-
-<h2>Add a Burger</h2>
-
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burger">Burger</label>
-    <input type="text" id="burger" name="burger">
   </div>
-
-  <div class="form-group">
-    <label for="description">Description</label>
-    <textarea id="description" name="description" rows="1" cols="40"></textarea>
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
 </div>
 
 
