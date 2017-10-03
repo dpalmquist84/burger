@@ -5,6 +5,7 @@
 // Dependencies
 // =============================================================
 var Burger = require("../models/burger.js");
+var Devoured = require("../models/burger.js");
 
 
 // Routes
@@ -32,8 +33,8 @@ module.exports = function(app) {
     console.log(req.body);
 
     Burger.create({
-      burger: req.body.author,
-      taste: req.body.body,
+      burger: req.body.burger,
+      taste: req.body.taste,
       created_at: req.body.created_at
     }).then(function(results) {
       // `results` here would be the newly created chirp
@@ -41,5 +42,17 @@ module.exports = function(app) {
     });
 
   });
+
+  app.get("/api/burger", function(req, res) {
+
+    Burger.findAll({}).then(function(results) {
+        // results are available to us inside the .then
+        res.json(results);
+      });
+    
+    
+    
+    
+      });
 
 };

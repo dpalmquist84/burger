@@ -24,9 +24,9 @@ $("#burger-submit").on("click", function(event) {
   
         row.append("<p>" + newburger.burger + " </p>");
         row.append("<p>" + newburger.taste + "</p>");
-        row.append(`<p> Has this burger been eaten? ${newburger.is_devoured} </p>`)
+        row.append(`<p> eaten? false </p>`)
         row.append("<p>At " + moment(newburger.created_at).format("h:mma on dddd") + "</p>");
-        row.append(`<button id="devour" class="btn">Devour 🍔 </button>`)
+        row.append(`<a href="api/burger"<button id="devour" class="btn">Devour ${newburger.burger} </button></a>`)
   
         $("#burger-area").prepend(row);
   
@@ -56,7 +56,7 @@ $("#devour").on("click", function(){
         row.append("<p> How does it taste? " + data[i].taste + "</p>");
         row.append(`<p> eaten? ${data[i].is_devoured} </p>`)
         row.append("<p>At " + moment(data[i].created_at).format("h:mma on dddd") + "</p>");
-        row.append(`<button id="devour" class="btn">Devour?</button>`)
+        row.append(`<button id="devour" class="btn">Devour? ${data[i].burger}</button>`)
   
         $("#burger-area").prepend(row);
   
