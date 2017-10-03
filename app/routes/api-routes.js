@@ -45,7 +45,7 @@ module.exports = function(app) {
 
   app.get("/api/burger", function(req, res) {
 
-    Burger.findAll({}).then(function(results) {
+    Devoured.findAll({}).then(function(results) {
         // results are available to us inside the .then
         res.json(results);
       });

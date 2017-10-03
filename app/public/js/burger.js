@@ -39,8 +39,16 @@ $("#burger-submit").on("click", function(event) {
 
 $("#devour").on("click", function(){
     console.log("devoured")
+       // Send an AJAX POST-request with jQuery
+       $.post("/api/burger", chosenBurger)
+       // On success, run the following code
+       .done(function() {
+        var row = $("<div>");
+        row.addClass("devoured");
 
-})
+        row.append(`${chosenBurger}`)
+
+});
   
   // When the page loads, grab all of our chirps
   $.get("/api/all", function(data) {
